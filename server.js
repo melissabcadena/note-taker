@@ -11,6 +11,9 @@ app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
 
+// create static routes
+app.use(express.static('public'));
+
 function filterByQuery (query, notesArray) {
     let filteredResults = notesArray;
     if(query.title) {
