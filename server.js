@@ -1,5 +1,6 @@
 const notes = require('./db/db.json')
 const express = require('express');
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 const path = require('path');
@@ -35,6 +36,6 @@ app.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'))
 });
 
-app.listen(3001, () => {
-    console.log(`API Server now on port 3001`);
+app.listen(PORT, () => {
+    console.log(`API Server now on port ${PORT}!`);
 })
