@@ -16,6 +16,11 @@ function filterByQuery (query, notesArray) {
     return filteredResults;
 }
 
+function findById(id, notes) {
+    const result = notes.filter(note => note.id === id)[0];
+    return result;
+}
+
 // route to notes db
 app.get('/api/notes', (req, res) => {
     let results = notes;
@@ -24,6 +29,12 @@ app.get('/api/notes', (req, res) => {
     }
     res.json(results);
 });
+
+//  route to param name
+app.get('/api/notes/:id', (req, res) => {
+    const result = findById(req.params.id, notes);
+    res.json(result);
+})
 
 
 // route to index.html file
