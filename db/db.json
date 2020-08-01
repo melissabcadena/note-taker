@@ -1,14 +1,17 @@
-{
-  "notes": [
-    {
-      "title": "Test",
-      "text": "Text",
-      "id": "test_id"
-    },
-    {
-      "title": "Test2",
-      "text": "Text2",
-      "id": "test_id2"
-    }
-  ]
-}
+[
+  {
+    "title": "Test",
+    "text": "Text",
+    "id": "test_id"
+  },
+  {
+    "title": "Test2",
+    "text": "Text2",
+    "id": "test_id2"
+  },
+  {
+    "title": "Add new note",
+    "text": "Hello , new note",
+    "id": "sktwi12rhkdc837uq"
+  }
+]

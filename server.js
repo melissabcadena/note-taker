@@ -39,7 +39,7 @@ function createNewNote(body, notesArray) {
 
     //updates the notes db w the new note 
     fs.writeFileSync(path.join(__dirname, './db/db.json'),
-    JSON.stringify({ notes: notesArray }, null, 2)
+    JSON.stringify(notes, null, 2)
     );
 
     return newNote;
