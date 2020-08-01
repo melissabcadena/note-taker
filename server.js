@@ -1,7 +1,29 @@
+const notes = require('./db/db.json')
 const express = require('express');
 const app = express();
 
 const path = require('path');
+
+function filterByQuery (query, notesArray) {
+    let filteredResults = notesArray;
+    if(query.title) {
+        filteredResults = filteredResults.filter(note => note.title === query.title);
+    }
+    if(query.text) {
+        filteredResults = filteredResults.filter( note => note.text === query.text);
+    }
+    return filteredResults;
+}
+
+// route to notes db
+app.get('/api/notes', (req, res) => {
+    let results = notes;
+    if (req.query) {
+        results = filterByQuery(req.query, results)
+    }
+    res.json(results);
+});
+
 
 // route to index.html file
 app.get('/', (req, res) => {
