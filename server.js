@@ -45,6 +45,14 @@ function createNewNote(body, notesArray) {
     return newNote;
 }
 
+function findIndexById(id, notes) {
+    for (let i = 0; i < notes.length; i++) {
+        if (id === notes[i].id) {
+            return i;
+        } 
+    }
+}
+
 function validateNote(note) {
     if(!note.title || typeof note.title !== 'string') {
         return false;
@@ -83,6 +91,28 @@ app.post('/api/notes', (req, res) => {
         res.json(newNote);
     }
 });
+
+// delete endpoint to allow notes to be deleted
+app.delete('/api/notes/:id', function (req, res) {
+
+    // create variable of desired note to delete's id
+    const id = req.params.id
+
+    // find index of note to be deleted within notes array
+    var index = findIndexById(id, notes);
+
+    console.log(index)
+    // remove note at index defined above from notes array
+    notes.splice(index, 1);
+    console.log(notes);
+    //updates the notes db w the new note 
+    fs.writeFileSync(path.join(__dirname, './db/db.json'),
+    JSON.stringify(notes, null, 2)
+    );
+
+    res.json(notes);
+  })
+
 
 
 // route to index.html file
