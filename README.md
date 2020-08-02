@@ -24,6 +24,14 @@ Additionally, the npm package uniqid is used to assign a unique ID to each note.
 * NPM Package - uniqid
 
 ## Screenshots
+* See api/notes route 
+<img src = "./public/assets/images/sleepy-tor-61565.herokuapp.com_api_notes.png">
+
+* See / route (index.html)
+<img src = "./public/assets/images/sleepy-tor-61565.herokuapp.com_.png">
+
+* See /notes route (notes.html)
+<img src = "./public/assets/images/sleepy-tor-61565.herokuapp.com_notes.png">
 
 ## Deployed Application Link
 https://sleepy-tor-61565.herokuapp.com/
